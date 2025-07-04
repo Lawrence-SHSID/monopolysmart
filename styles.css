@@ -1,7 +1,16 @@
 body {
-	background: #FFFFFF;
+	background: cyan;
 	margin: 0px;
 	min-width: 1075px;
+}
+
+h1 {
+	font-family: 'Bitcount Grid Double', monospace;
+	font-size: 4rem;
+}
+
+.pixel-font {
+	font-family: 'Bitcount Grid Double', monospace;
 }
 
 td {
@@ -14,6 +23,18 @@ td {
 #setup {
 	display: none;
 	margin: 15px;
+}
+
+#welcome {
+  display: grid;
+  place-items: center;
+  font-family: 'Bitcount Grid Double', monospace;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 #moneybar {

@@ -11,9 +11,16 @@
 	<script type="text/javascript" src="ai.js"></script>
 	<script type="text/javascript" src="monopoly.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+	<div id="welcome" style="display: block;">
+		<h1>WELCOME TO MONOPOLY PRO</h1>
+		<button onclick="document.getElementById('welcome').style.display='none'; document.getElementById('board').style.display='block';">GO TO SETTINGS</button>
+	</div>
 	<div id="popupbackground"></div>
 	<div id="popupwrap">
 		<div id="popup">
