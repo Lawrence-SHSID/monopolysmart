@@ -26,11 +26,41 @@ td {
 }
 
 #welcome {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   font-family: 'Bitcount Grid Double', monospace;
   animation: fadeIn 1s;
+  text-align: center;
 }
+
+button {
+    padding: 15px 30px;
+    font-family: 'Bitcount Grid Double', monospace;
+    font-size: 100px;
+    cursor: pointer;
+    background-color: #1500ff;
+    color: white;
+    border: 3px solid #3cb371;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(255, 242, 0);
+    transition: all 0.3s;
+    margin-top: 30px;
+}
+
+button:hover {
+    background-color: #3cb371;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+
 
 @keyframes fadeIn {
   from { opacity: 0; }

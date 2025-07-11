@@ -1106,6 +1106,14 @@ function Game() {
 
 var game;
 
+// Wrap initialization in an event listener
+const checkPropertiesLoaded = setInterval(() => {
+  if (window.propertiesLoaded) {
+    clearInterval(checkPropertiesLoaded);
+    // Your game initialization code here
+  }
+}, 100);
+
 
 function Player(name, color) {
 	this.name = name;
@@ -2702,7 +2710,7 @@ function menuitem_onmouseout(element) {
 	return;
 }
 
-window.onload = function() {
+$(document).ready(function() {
 	game = new Game();
 
 	for (var i = 0; i <= 8; i++) {
@@ -3007,6 +3015,4 @@ window.onload = function() {
 
 
 	$("#trade-menu-item").click(game.trade);
-
-
-};
+});
