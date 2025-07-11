@@ -104,39 +104,148 @@ try {
 }
 
 var communityChestCards = [];
+
+const communityChestCardDefinitions = [
+  {
+    text: "Get out of Jail, Free. This card may be kept until needed or sold.",
+    action: (p) => { p.communityChestJailCard = true; updateOwned(); }
+  },
+  {
+    text: "You have won lifetime home delivery of the New York Times. Collect $10",
+    action: () => { addamount(10, 'Community Chest'); }
+  },
+  {
+    text: "From sale of Macy's stock, you get $45",
+    action: () => { addamount(45, 'Community Chest'); }
+  },
+  {
+    text: "Life insurance matures. Collect $100",
+    action: () => { addamount(100, 'Community Chest'); }
+  },
+  {
+    text: "Deloitte & Touche LLP tax return Collect $20",
+    action: () => { addamount(20, 'Community Chest'); }
+  },
+  {
+    text: "FAO Schwarz Xmas fund matures. Collect $100",
+    action: () => { addamount(100, 'Community Chest'); }
+  },
+  {
+    text: "You have won a United Airlines trip around the world! Collect $100",
+    action: () => { addamount(100, 'Community Chest'); }
+  },
+  {
+    text: "Performed a wedding at the Plaza Hotel. Receive $25",
+    action: () => { addamount(25, 'Community Chest'); }
+  },
+  {
+    text: "Pay hospital $100",
+    action: () => { subtractamount(100, 'Community Chest'); }
+  },
+  {
+    text: "You won the Lottery! Collect $200",
+    action: () => { addamount(200, 'Community Chest'); }
+  },
+  {
+    text: "Pay school tax of $150",
+    action: () => { subtractamount(150, 'Community Chest'); }
+  },
+  {
+    text: "Doctor's fee. Pay $50",
+    action: () => { subtractamount(50, 'Community Chest'); }
+  },
+  {
+    text: "Madison Square Garden opening tonight. Collect $50 from every player for opening night seats.",
+    action: () => { collectfromeachplayer(50, 'Community Chest'); }
+  },
+  {
+    text: "You have won kiss cash! Advance to GO (Collect $200)",
+    action: () => { advance(0); }
+  },
+  {
+    text: "You are assessed for street repairs. $40 per house. $115 per hotel.",
+    action: () => { streetrepairs(40, 115); }
+  },
+  {
+    text: "Go to Jail. Go directly to Jail. Do not pass GO. Do not collect $200.",
+    action: () => { gotojail(); }
+  }
+];
+
+communityChestCardDefinitions.forEach((def) => {
+  communityChestCards.push(new Card(def.text, def.action));
+});
+
+
 var chanceCards = [];
 
-communityChestCards[0] = new Card("Get out of Jail, Free. This card may be kept until needed or sold.", function() { p.communityChestJailCard = true; updateOwned();});
-communityChestCards[1] = new Card("You have won lifetime home delivery of the New York Times. Collect $10", function() { addamount(10, 'Community Chest');});
-communityChestCards[2] = new Card("From sale of Macy's stock, you get $45", function() { addamount(45, 'Community Chest');});
-communityChestCards[3] = new Card("Life insurance matures. Collect $100", function() { addamount(100, 'Community Chest');});
-communityChestCards[4] = new Card("Deloitte & Touche LLP tax return Collect $20", function() { addamount(20, 'Community Chest');});
-communityChestCards[5] = new Card("FAO Schwarz Xmas fund matures. Collect $100", function() { addamount(100, 'Community Chest');});
-communityChestCards[6] = new Card("You have won a United Airlines trip around the world! Collect $100", function() { addamount(100, 'Community Chest');});
-communityChestCards[7] = new Card("Performed a wedding at the Plaza Hotel. Receive $25", function() { addamount(25, 'Community Chest');});
-communityChestCards[8] = new Card("Pay hospital $100", function() { subtractamount(100, 'Community Chest');});
-communityChestCards[9] = new Card("You won the Lottery! Collect $200", function() { addamount(200, 'Community Chest');});
-communityChestCards[10] = new Card("Pay school tax of $150", function() { subtractamount(150, 'Community Chest');});
-communityChestCards[11] = new Card("Doctor's fee. Pay $50", function() { subtractamount(50, 'Community Chest');});
-communityChestCards[12] = new Card("Madison Square Garden opening tonight. Collect $50 from every player for opening night seats.", function() { collectfromeachplayer(50, 'Community Chest');});
-communityChestCards[13] = new Card("You have won kiss cash! Advance to GO (Collect $200)", function() { advance(0);});
-communityChestCards[14] = new Card("You are assessed for street repairs. $40 per house. $115 per hotel.", function() { streetrepairs(40, 115);});
-communityChestCards[15] = new Card("Go to Jail. Go directly to Jail. Do not pass GO. Do not collect $200.", function() { gotojail();});
+const chanceCardDefinitions = [
+  {
+    text: "Get out of Jail free. This card may be kept until needed or sold.",
+    action: (p) => { p.chanceJailCard = true; updateOwned(); }
+  },
+  {
+    text: "Make general repairs on all your property. For each house pay $25. For each hotel $100.",
+    action: () => { streetrepairs(25, 100); }
+  },
+  {
+    text: "Pay poor tax of $15.",
+    action: () => { subtractamount(15, 'Chance'); }
+  },
+  {
+    text: "You have been elected chairman of Con Edison. Pay each player $50.",
+    action: () => { payeachplayer(50, 'Chance'); }
+  },
+  {
+    text: "Go back 3 spaces.",
+    action: () => { gobackthreespaces(); }
+  },
+  {
+    text: "Advance token to the nearest Con Edison utility. If UNOWNED you may buy it from the bank. If OWNED, throw dice and pay owner a total of ten times the amount thrown.",
+    action: () => { advanceToNearestUtility(); }
+  },
+  {
+    text: "Citibank pays you interest of $50.",
+    action: () => { addamount(50, 'Chance'); }
+  },
+  {
+    text: "Advance token to the nearest Transportation and pay owner Twice the Rental to which they are otherwise entitled. If Transportation is unowned, you may buy it from the Bank.",
+    action: () => { advanceToNearestRailroad(); }
+  },
+  {
+    text: "Take a walk past The Essex House. Advance to GO. Collect $200.",
+    action: () => { advance(0, 32); }
+  },
+  {
+    text: "Take a ride to the Regency Hotel! If you pass GO collect $200.",
+    action: () => { advance(31); }
+  },
+  {
+    text: "Take a walk on fifth avenue. Advance token to Trump Tower.",
+    action: () => { advance(39); }
+  },
+  {
+    text: "Advance to thirteen.",
+    action: () => { advance(13); }
+  },
+  {
+    text: "Your Smith Barney mutual fund pays dividend. Collect $150.",
+    action: () => { addamount(150, 'Chance'); }
+  },
+  {
+    text: "Advance token to the nearest Transportation and pay owner Twice the Rental to which they are otherwise entitled.\n\nIf Transportation is unowned, you may buy it from the Bank.",
+    action: () => { advanceToNearestRailroad(); }
+  },
+  {
+    text: "Catch a bus to Central Park. If you pass GO, collect $200.",
+    action: () => { advance(9); }
+  },
+  {
+    text: "Go directly to Jail. Do not pass GO, do not collect $200.",
+    action: () => { gotojail(); }
+  }
+];
 
-
-chanceCards[0] = new Card("Get out of Jail free. This card may be kept until needed or sold.", function() { p.chanceJailCard=true; updateOwned();});
-chanceCards[1] = new Card("Make general repairs on all your property. For each house pay $25. For each hotel $100.", function() { streetrepairs(25, 100);});
-chanceCards[2] = new Card("Pay poor tax of $15.", function() { subtractamount(15, 'Chance');});
-chanceCards[3] = new Card("You have been elected chairman of Con Edison. Pay each player $50.", function() { payeachplayer(50, 'Chance');});
-chanceCards[4] = new Card("Go back 3 spaces.", function() { gobackthreespaces();});
-chanceCards[5] = new Card("Advance token to the nearest Con Edison utility. If UNOWNED you may buy it from the bank. If OWNED, throw dice and pay owner a total of ten times the amount thrown.", function() { advanceToNearestUtility();});
-chanceCards[6] = new Card("Citibank pays you interest of $50.", function() { addamount(50, 'Chance');});
-chanceCards[7] = new Card("Advance token to the nearest Transportation and pay owner Twice the Rental to which they are otherwise entitled. If Transportation is unowned, you may buy it from the Bank.", function() { advanceToNearestRailroad();});
-chanceCards[8] = new Card("Take a walk past The Essex House. Advance to GO. Collect $200.", function() { advance(0,32);});
-chanceCards[9] = new Card("Take a ride to the Regency Hotel! If you pass GO collect $200.", function() { advance(31);});
-chanceCards[10] = new Card("Take a walk on fifth avenue. Advance token to Trump Tower.", function() { advance(39);});
-chanceCards[11] = new Card("Advance to thirteen.", function() { advance(13);});
-chanceCards[12] = new Card("Your Smith Barney mutual fund pays dividend. Collect $150.", function() { addamount(150, 'Chance');});
-chanceCards[13] = new Card("Advance token to the nearest Transportation and pay owner Twice the Rental to which they are otherwise entitled.\n\nIf Transportation is unowned, you may buy it from the Bank.", function() { advanceToNearestRailroad();});
-chanceCards[14] = new Card("Catch a bus to Central Park. If you pass GO, collect $200.", function() { advance(9);});
-chanceCards[15] = new Card("Go directly to Jail. Do not pass GO, do not collect $200.", function() { gotojail();});
+chanceCardDefinitions.forEach((def) => {
+  chanceCards.push(new Card(def.text, def.action));
+});
