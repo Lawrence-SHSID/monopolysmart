@@ -867,10 +867,38 @@ button:active {
 
 	height: 68px;
 	right: -25px;
-
-
-
 	top: 0px;
 	width: 15px;
 
 }
+
+.game-rules {
+    font-size: 1.1em;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.rules-section h4 {
+    font-size: 1.3em;
+    margin: 15px 0;
+    color: #2c3e50;
+}
+/* Enhanced styling for better readability */
+
+.game-rules h3 {
+    color: #2c3e50;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+.game-rules ul {
+    list-style-type: square;
+    padding-left: 25px;
+}
+
+.game-rules li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+

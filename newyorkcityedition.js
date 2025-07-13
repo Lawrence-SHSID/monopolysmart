@@ -241,7 +241,7 @@ const chanceCardDefinitions = [
     action: () => { advance(9); }
   },
   {
-    text: "Go directly to Jail. Do not pass GO, do not collect $200.",
+    text: "You are arrested! Go directly to Jail. Do not pass GO, do not collect $200.",
     action: () => { gotojail(); }
   }
 ];

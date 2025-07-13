@@ -35,11 +35,11 @@ def call_deepseek(prompt, model="deepseek-chat", max_tokens=2000, temperature=0.
 
 # 使用示例
 if __name__ == "__main__":
-    test_prompt = "could u gimme 25 facts bout minecraft?"
+    test_prompt = "ender dragon?"
     result = call_deepseek(test_prompt)
     
     if result:
-        print("API响应:")
+        print("AI result:")
         print(result)
     else:
-        print("API调用失败")
+        print("AI 34404")

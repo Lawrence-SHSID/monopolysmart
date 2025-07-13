@@ -1,0 +1,137 @@
+[
+  {
+    "property_name": "LOMTO",
+    "neighbourhood": "N/A (Insufficient data)",
+    "price": "N/A"
+  },
+  {
+    "property_name": "Statue of Liberty",
+    "neighbourhood": "Financial District",
+    "price": 1347
+  },
+  {
+    "property_name": "Empire State Building",
+    "neighbourhood": "Midtown South",
+    "price": 1581
+  },
+  {
+    "property_name": "Central Park",
+    "neighbourhood": "Multiple (Central Park South used)",
+    "price": 2719
+  },
+  {
+    "property_name": "98.7 Kiss FM",
+    "neighbourhood": "Hudson Square",
+    "price": 2600
+  },
+  {
+    "property_name": "Con Edison Electric",
+    "neighbourhood": "Union Square",
+    "price": 1800
+  },
+  {
+    "property_name": "Thirteen WNET",
+    "neighbourhood": "Lincoln Square",
+    "price": 1369
+  },
+  {
+    "property_name": "The New York Times",
+    "neighbourhood": "Theatre District - Times Square",
+    "price": 1670
+  },
+  {
+    "property_name": "New York City Transit",
+    "neighbourhood": "Financial District",
+    "price": 1347
+  },
+  {
+    "property_name": "New York Rangers",
+    "neighbourhood": "Midtown West (MSG location)",
+    "price": 1090
+  },
+  {
+    "property_name": "New York Knicks",
+    "neighbourhood": "Midtown West (MSG location)",
+    "price": 1090
+  },
+  {
+    "property_name": "Madison Square Garden",
+    "neighbourhood": "Midtown West",
+    "price": 1090
+  },
+  {
+    "property_name": "macy*s",
+    "neighbourhood": "Herald Square (Midtown West)",
+    "price": 1090
+  },
+  {
+    "property_name": "FAO Schwarz",
+    "neighbourhood": "Central Park South (Plaza Hotel area)",
+    "price": 2719
+  },
+  {
+    "property_name": "bloomingdale's",
+    "neighbourhood": "Lenox Hill (Upper East Side)",
+    "price": 1332
+  },
+  {
+    "property_name": "Metro-North Railroad",
+    "neighbourhood": "Midtown East (Grand Central area)",
+    "price": 1105
+  },
+  {
+    "property_name": "Deloitte & Touche LLP",
+    "neighbourhood": "Midtown Manhattan",
+    "price": 1581
+  },
+  {
+    "property_name": "SmithBarney",
+    "neighbourhood": "Financial District",
+    "price": 1347
+  },
+  {
+    "property_name": "Con Edison Gas",
+    "neighbourhood": "Union Square (Same as Electric HQ)",
+    "price": 1800
+  },
+  {
+    "property_name": "CITIBANK",
+    "neighbourhood": "Financial District",
+    "price": 1347
+  },
+  {
+    "property_name": "The Regency Hotel",
+    "neighbourhood": "Upper East Side",
+    "price": 1332
+  },
+  {
+    "property_name": "Essex House",
+    "neighbourhood": "Central Park South",
+    "price": 2719
+  },
+  {
+    "property_name": "The Plaza",
+    "neighbourhood": "Central Park South",
+    "price": 2719
+  },
+  {
+    "property_name": "United Airlines",
+    "neighbourhood": "Midtown West (Times Square offices)",
+    "price": 1670
+  },
+  {
+    "property_name": "Tiffany & CO.",
+    "neighbourhood": "Midtown (Fifth Avenue flagship)",
+    "price": 1581
+  },
+  {
+    "property_name": "LUXURY TAX",
+    "neighbourhood": "N/A (Not a physical property)",
+    "price": "N/A"
+  },
+  {
+    "property_name": "TRUMP TOWER",
+    "neighbourhood": "Midtown East (Fifth Avenue)",
+    "price": 1581
+  }
+]
